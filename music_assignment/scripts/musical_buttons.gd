@@ -26,3 +26,10 @@ func _on_cat_3_pressed() -> void:
 func _on_cat_4_pressed() -> void:
 	$cat_4/AudioStreamPlayer.play()
 	
+func _on_h_slider_value_changed(value: float) -> void: #controls pitch
+	$cat_1/AudioStreamPlayer.pitch_scale = value 
+
+
+#func _on_hertz_value_changed(value: float) -> void:
+	#var f:AudioEffectLowPassFilter = AudioServer.get_bus_effects(0,0)
+	#f.rate_hz value 
