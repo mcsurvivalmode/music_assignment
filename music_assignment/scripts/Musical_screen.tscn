@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsabnbioyq1vi"]
+
+[ext_resource type="Script" path="res://scripts/musical_buttons.gd" id="1_8uvff"]
+[ext_resource type="AudioStream" uid="uid://ns6gp1hqp7cu" path="res://audio/pickupCoin.wav" id="2_y3yax"]
+[ext_resource type="PackedScene" uid="uid://2nt7cbp5akwy" path="res://scripts/volume_sliders.tscn" id="3_cwv5s"]
+[ext_resource type="AudioStream" uid="uid://cd6ifrl05um1t" path="res://audio/blipSelect.wav" id="4_itv7l"]
+[ext_resource type="AudioStream" uid="uid://q1supufivfvv" path="res://audio/laserShoot.wav" id="4_mp5lm"]
+[ext_resource type="AudioStream" uid="uid://ci1ned7jvwfsu" path="res://audio/random.wav" id="5_q66on"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8uvff")
+
+[node name="cat_1" type="Button" parent="."]
+offset_left = 119.0
+offset_top = 288.0
+offset_right = 304.0
+offset_bottom = 336.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_1"]
+stream = ExtResource("2_y3yax")
+bus = &"volume_1"
+
+[node name="HSlider" parent="cat_1" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 77.0
+offset_right = 163.0
+offset_bottom = 93.0
+bus_name = "volume_1"
+
+[node name="cat_2" type="Button" parent="."]
+offset_left = 357.0
+offset_top = 279.0
+offset_right = 551.0
+offset_bottom = 336.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_2"]
+stream = ExtResource("4_itv7l")
+bus = &"volume_2"
+
+[node name="HSlider" parent="cat_2" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 84.0
+offset_right = 170.0
+offset_bottom = 100.0
+bus_name = "volume_2"
+
+[node name="cat_3" type="Button" parent="."]
+offset_left = 628.0
+offset_top = 282.0
+offset_right = 828.0
+offset_bottom = 337.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_3"]
+stream = ExtResource("5_q66on")
+bus = &"volume_3"
+
+[node name="HSlider" parent="cat_3" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 77.0
+offset_right = 177.0
+offset_bottom = 93.0
+bus_name = "volume_3"
+
+[node name="cat_4" type="Button" parent="."]
+offset_left = 901.0
+offset_top = 277.0
+offset_right = 1074.0
+offset_bottom = 332.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_4"]
+stream = ExtResource("4_mp5lm")
+bus = &"volume_4"
+
+[node name="HSlider" parent="cat_4" instance=ExtResource("3_cwv5s")]
+offset_left = 19.0
+offset_top = 79.0
+offset_right = 159.0
+offset_bottom = 95.0
+bus_name = "volume_4"
+
+[connection signal="pressed" from="cat_1" to="." method="_on_cat_1_pressed"]
+[connection signal="pressed" from="cat_1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="cat_2" to="." method="_on_cat_2_pressed"]
+[connection signal="pressed" from="cat_3" to="." method="_on_cat_3_pressed"]
+[connection signal="pressed" from="cat_4" to="." method="_on_cat_4_pressed"]
