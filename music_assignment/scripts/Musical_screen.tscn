@@ -1,20 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsabnbioyq1vi"]
+[gd_scene load_steps=17 format=3 uid="uid://bsabnbioyq1vi"]
 
 [ext_resource type="Script" path="res://scripts/musical_buttons.gd" id="1_8uvff"]
+[ext_resource type="Texture2D" uid="uid://bjvf54w77457x" path="res://images/stage_music.jpg" id="2_ujgd3"]
 [ext_resource type="AudioStream" uid="uid://ns6gp1hqp7cu" path="res://audio/pickupCoin.wav" id="2_y3yax"]
 [ext_resource type="PackedScene" uid="uid://2nt7cbp5akwy" path="res://scripts/volume_sliders.tscn" id="3_cwv5s"]
+[ext_resource type="Texture2D" uid="uid://bf6newuqn0648" path="res://images/blue_button.png" id="3_hns56"]
+[ext_resource type="Texture2D" uid="uid://ci5fa4fvn5jhw" path="res://images/cats_on_stage.png" id="3_sbqic"]
 [ext_resource type="AudioStream" uid="uid://cd6ifrl05um1t" path="res://audio/blipSelect.wav" id="4_itv7l"]
 [ext_resource type="AudioStream" uid="uid://q1supufivfvv" path="res://audio/laserShoot.wav" id="4_mp5lm"]
 [ext_resource type="AudioStream" uid="uid://ci1ned7jvwfsu" path="res://audio/random.wav" id="5_q66on"]
+[ext_resource type="Texture2D" uid="uid://bqqn7kjo567v4" path="res://images/yellow_button.png" id="6_27t7a"]
+[ext_resource type="Texture2D" uid="uid://cew3qwu765jx4" path="res://images/green_button.png" id="8_mk6tg"]
+[ext_resource type="Texture2D" uid="uid://5ophggkvh1a1" path="res://images/red_button.png" id="10_nwdit"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i788"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf6ei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufxda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iy1jm"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8uvff")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ujgd3")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 104.0
+offset_top = 24.0
+offset_right = 2024.0
+offset_bottom = 1104.0
+texture = ExtResource("3_sbqic")
+
 [node name="cat_1" type="Button" parent="."]
-offset_left = 119.0
-offset_top = 288.0
-offset_right = 304.0
-offset_bottom = 336.0
+offset_left = 42.0
+offset_top = 870.0
+offset_right = 462.0
+offset_bottom = 1005.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1i788")
+button_mask = 0
+icon = ExtResource("3_hns56")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_1"]
 stream = ExtResource("2_y3yax")
@@ -22,17 +51,19 @@ bus = &"volume_1"
 
 [node name="HSlider" parent="cat_1" instance=ExtResource("3_cwv5s")]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 77.0
-offset_right = 163.0
-offset_bottom = 93.0
+offset_left = 28.0
+offset_top = 150.0
+offset_right = 399.0
+offset_bottom = 166.0
 bus_name = "volume_1"
 
 [node name="cat_2" type="Button" parent="."]
-offset_left = 357.0
-offset_top = 279.0
-offset_right = 551.0
-offset_bottom = 336.0
+offset_left = 514.0
+offset_top = 876.0
+offset_right = 943.0
+offset_bottom = 1019.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cf6ei")
+icon = ExtResource("6_27t7a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_2"]
 stream = ExtResource("4_itv7l")
@@ -40,17 +71,19 @@ bus = &"volume_2"
 
 [node name="HSlider" parent="cat_2" instance=ExtResource("3_cwv5s")]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 84.0
-offset_right = 170.0
-offset_bottom = 100.0
+offset_left = 15.0
+offset_top = 151.0
+offset_right = 377.0
+offset_bottom = 167.0
 bus_name = "volume_2"
 
 [node name="cat_3" type="Button" parent="."]
-offset_left = 628.0
-offset_top = 282.0
-offset_right = 828.0
-offset_bottom = 337.0
+offset_left = 989.0
+offset_top = 876.0
+offset_right = 1419.0
+offset_bottom = 1020.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ufxda")
+icon = ExtResource("8_mk6tg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_3"]
 stream = ExtResource("5_q66on")
@@ -58,17 +91,19 @@ bus = &"volume_3"
 
 [node name="HSlider" parent="cat_3" instance=ExtResource("3_cwv5s")]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 77.0
-offset_right = 177.0
-offset_bottom = 93.0
+offset_left = 28.0
+offset_top = 154.0
+offset_right = 401.0
+offset_bottom = 170.0
 bus_name = "volume_3"
 
 [node name="cat_4" type="Button" parent="."]
-offset_left = 901.0
-offset_top = 277.0
-offset_right = 1074.0
-offset_bottom = 332.0
+offset_left = 1464.0
+offset_top = 878.0
+offset_right = 1892.0
+offset_bottom = 1021.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iy1jm")
+icon = ExtResource("10_nwdit")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_4"]
 stream = ExtResource("4_mp5lm")
@@ -76,31 +111,32 @@ bus = &"volume_4"
 
 [node name="HSlider" parent="cat_4" instance=ExtResource("3_cwv5s")]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 79.0
-offset_right = 159.0
-offset_bottom = 95.0
+offset_left = 30.0
+offset_top = 149.0
+offset_right = 403.0
+offset_bottom = 169.0
 bus_name = "volume_4"
 
 [node name="Hslider" type="HSlider" parent="."]
-offset_left = 304.0
-offset_top = 111.0
-offset_right = 437.0
-offset_bottom = 127.0
+offset_left = 110.0
+offset_top = 225.0
+offset_right = 549.0
+offset_bottom = 281.0
+rotation = 1.57227
 max_value = 1.0
 step = 0.001
 
 [node name="hertz" type="HSlider" parent="."]
-offset_left = 304.0
-offset_top = 111.0
-offset_right = 312.0
-offset_bottom = 127.0
+offset_left = -462.0
+offset_top = 367.0
+offset_right = -122.0
+offset_bottom = 383.0
 
-[connection signal="pressed" from="cat_1" to="." method="_on_cat_1_pressed"]
 [connection signal="pressed" from="cat_1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="cat_1" to="." method="_on_cat_1_pressed"]
 [connection signal="pressed" from="cat_2" to="." method="_on_cat_2_pressed"]
 [connection signal="pressed" from="cat_3" to="." method="_on_cat_3_pressed"]
 [connection signal="pressed" from="cat_4" to="." method="_on_cat_4_pressed"]
 [connection signal="value_changed" from="Hslider" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="hertz" to="." method="_on_hertz_value_changed"]
 [connection signal="value_changed" from="hertz" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="hertz" to="." method="_on_hertz_value_changed"]

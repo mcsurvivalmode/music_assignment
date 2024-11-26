@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	
 	pass
 
 func _on_cat_1_pressed() -> void:
@@ -33,3 +35,8 @@ func _on_h_slider_value_changed(value: float) -> void: #controls pitch
 #func _on_hertz_value_changed(value: float) -> void:
 	#var f:AudioEffectLowPassFilter = AudioServer.get_bus_effects(0,0)
 	#f.rate_hz value 
+
+
+func _on_area_2d_mouse_entered() -> void:
+	print("MOUSE")
+	pass # Replace with function body.
