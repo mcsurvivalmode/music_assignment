@@ -1,0 +1,186 @@
+[gd_scene load_steps=25 format=3 uid="uid://bsabnbioyq1vi"]
+
+[ext_resource type="Script" path="res://scripts/musical_buttons.gd" id="1_8uvff"]
+[ext_resource type="Texture2D" uid="uid://bjvf54w77457x" path="res://images/stage_music.jpg" id="2_ujgd3"]
+[ext_resource type="AudioStream" uid="uid://ns6gp1hqp7cu" path="res://audio/pickupCoin.wav" id="2_y3yax"]
+[ext_resource type="PackedScene" uid="uid://2nt7cbp5akwy" path="res://scripts/volume_sliders.tscn" id="3_cwv5s"]
+[ext_resource type="Texture2D" uid="uid://bf6newuqn0648" path="res://images/blue_button.png" id="3_hns56"]
+[ext_resource type="Texture2D" uid="uid://ci5fa4fvn5jhw" path="res://images/cats_on_stage.png" id="3_sbqic"]
+[ext_resource type="AudioStream" uid="uid://cd6ifrl05um1t" path="res://audio/blipSelect.wav" id="4_itv7l"]
+[ext_resource type="Texture2D" uid="uid://dmsa536y8rm0u" path="res://images/cats/idle_grey.png" id="4_kab1q"]
+[ext_resource type="AudioStream" uid="uid://q1supufivfvv" path="res://audio/laserShoot.wav" id="4_mp5lm"]
+[ext_resource type="Texture2D" uid="uid://bawi1667np4im" path="res://images/cats/idle_black.png" id="4_otpif"]
+[ext_resource type="Texture2D" uid="uid://1segxmi8w1nl" path="res://images/cats/idle_orange.png" id="5_mfk3a"]
+[ext_resource type="AudioStream" uid="uid://ci1ned7jvwfsu" path="res://audio/random.wav" id="5_q66on"]
+[ext_resource type="Texture2D" uid="uid://bqqn7kjo567v4" path="res://images/yellow_button.png" id="6_27t7a"]
+[ext_resource type="Texture2D" uid="uid://cijosbbvmc651" path="res://images/cats/idle_white.png" id="7_1umda"]
+[ext_resource type="Texture2D" uid="uid://cew3qwu765jx4" path="res://images/green_button.png" id="8_mk6tg"]
+[ext_resource type="Texture2D" uid="uid://5ophggkvh1a1" path="res://images/red_button.png" id="10_nwdit"]
+[ext_resource type="Texture2D" uid="uid://d3yl3s0oxkqrh" path="res://images/drum_button.png" id="13_or1yy"]
+[ext_resource type="Script" path="res://scripts/drum_looper.gd" id="14_xm7xh"]
+[ext_resource type="AudioStream" uid="uid://pq8kg860ussh" path="res://clap-tape.wav" id="16_08rwd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i788"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf6ei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufxda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iy1jm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvql7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8uvff")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ujgd3")
+
+[node name="cats_idle" type="TextureRect" parent="."]
+visible = false
+offset_left = 104.0
+offset_top = 24.0
+offset_right = 2024.0
+offset_bottom = 1104.0
+texture = ExtResource("3_sbqic")
+
+[node name="black_cat" type="Sprite2D" parent="."]
+position = Vector2(1064, 562)
+texture = ExtResource("4_otpif")
+
+[node name="orange_cat" type="Sprite2D" parent="."]
+position = Vector2(1068, 564)
+texture = ExtResource("5_mfk3a")
+
+[node name="grey_cat" type="Sprite2D" parent="."]
+position = Vector2(1070, 540)
+texture = ExtResource("4_kab1q")
+
+[node name="white_cat" type="Sprite2D" parent="."]
+position = Vector2(1068, 566)
+texture = ExtResource("7_1umda")
+
+[node name="cat_1" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 884.0
+offset_right = 460.0
+offset_bottom = 1019.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1i788")
+button_mask = 0
+icon = ExtResource("3_hns56")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_1"]
+stream = ExtResource("2_y3yax")
+bus = &"volume_1"
+
+[node name="HSlider" parent="cat_1" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 150.0
+offset_right = 399.0
+offset_bottom = 166.0
+bus_name = "volume_1"
+
+[node name="cat_2" type="Button" parent="."]
+offset_left = 514.0
+offset_top = 876.0
+offset_right = 943.0
+offset_bottom = 1019.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cf6ei")
+icon = ExtResource("6_27t7a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_2"]
+stream = ExtResource("4_itv7l")
+bus = &"volume_2"
+
+[node name="HSlider" parent="cat_2" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 151.0
+offset_right = 377.0
+offset_bottom = 167.0
+bus_name = "volume_2"
+
+[node name="cat_3" type="Button" parent="."]
+offset_left = 989.0
+offset_top = 876.0
+offset_right = 1419.0
+offset_bottom = 1020.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ufxda")
+icon = ExtResource("8_mk6tg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_3"]
+stream = ExtResource("5_q66on")
+bus = &"volume_3"
+
+[node name="HSlider" parent="cat_3" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 154.0
+offset_right = 401.0
+offset_bottom = 170.0
+bus_name = "volume_3"
+
+[node name="cat_4" type="Button" parent="."]
+offset_left = 1468.0
+offset_top = 870.0
+offset_right = 1896.0
+offset_bottom = 1013.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iy1jm")
+icon = ExtResource("10_nwdit")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="cat_4"]
+stream = ExtResource("4_mp5lm")
+bus = &"volume_4"
+
+[node name="HSlider" parent="cat_4" instance=ExtResource("3_cwv5s")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 149.0
+offset_right = 403.0
+offset_bottom = 169.0
+bus_name = "volume_4"
+
+[node name="Hslider" type="HSlider" parent="."]
+offset_left = 110.0
+offset_top = 225.0
+offset_right = 549.0
+offset_bottom = 281.0
+rotation = 1.57227
+max_value = 1.0
+step = 0.001
+
+[node name="hertz" type="HSlider" parent="."]
+offset_left = -462.0
+offset_top = 367.0
+offset_right = -122.0
+offset_bottom = 383.0
+
+[node name="drum" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 60.0
+offset_right = 261.0
+offset_bottom = 188.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fvql7")
+icon = ExtResource("13_or1yy")
+
+[node name="drum_looper" type="Node2D" parent="."]
+script = ExtResource("14_xm7xh")
+
+[node name="Clap-tape" type="AudioStreamPlayer" parent="drum_looper"]
+stream = ExtResource("16_08rwd")
+
+[node name="Timer" type="Timer" parent="drum_looper"]
+
+[connection signal="pressed" from="cat_1" to="." method="_on_cat_1_pressed"]
+[connection signal="pressed" from="cat_2" to="." method="_on_cat_2_pressed"]
+[connection signal="pressed" from="cat_3" to="." method="_on_cat_3_pressed"]
+[connection signal="pressed" from="cat_4" to="." method="_on_cat_4_pressed"]
+[connection signal="value_changed" from="Hslider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="hertz" to="." method="_on_hertz_value_changed"]
+[connection signal="value_changed" from="hertz" to="." method="_on_h_slider_value_changed"]
+[connection signal="button_down" from="drum" to="drum_looper" method="_on_drum_button_down"]
+[connection signal="pressed" from="drum" to="drum_looper" method="_on_drum_pressed"]
+[connection signal="timeout" from="drum_looper/Timer" to="drum_looper" method="_on_timer_timeout"]

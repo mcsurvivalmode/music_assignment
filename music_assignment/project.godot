@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Music_assignment"
+run/main_scene="res://splashscreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://audio/default_bus_layout (2).tres"
