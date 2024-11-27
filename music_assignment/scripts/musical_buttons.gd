@@ -8,17 +8,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	
 	pass
+	
+	
 
 func _on_cat_1_pressed() -> void:
 	$cat_1/AudioStreamPlayer.play()
-	
-
+	$idle_cat.texture = load("res://images/singing_grey.png")
 
 func _on_cat_2_pressed() -> void:
 	$cat_2/AudioStreamPlayer.play()
+	$idle_cat.texture = load("res://images/singing_grey.png")
+	await get_tree().create_timer(1.0).timeout
+	$idle_cat.texture = load("res://images/idle_grey.png")
+	
+	
 
 
 func _on_cat_3_pressed() -> void:
@@ -28,15 +32,10 @@ func _on_cat_3_pressed() -> void:
 func _on_cat_4_pressed() -> void:
 	$cat_4/AudioStreamPlayer.play()
 	
-func _on_h_slider_value_changed(value: float) -> void: #controls pitch
-	$cat_1/AudioStreamPlayer.pitch_scale = value 
+#func _on_h_slider_value_changed(value: float) -> void: #controls pitch
+	#$cat_1/AudioStreamPlayer.pitch_scale = value 
 
 
 #func _on_hertz_value_changed(value: float) -> void:
 	#var f:AudioEffectLowPassFilter = AudioServer.get_bus_effects(0,0)
 	#f.rate_hz value 
-
-
-func _on_area_2d_mouse_entered() -> void:
-	print("MOUSE")
-	pass # Replace with function body.
