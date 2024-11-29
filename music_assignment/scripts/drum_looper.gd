@@ -1,7 +1,7 @@
 extends Node2D
 
 var pattern = []
-var steps = 16
+var steps = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,12 +14,8 @@ func _ready() -> void:
 	pattern[2] = 3	
 	pattern[4] = 4
 	pattern[6] = 3
-	pattern[8] = 4
-	pattern[10] = 3
-	pattern[12] = 4
-	pattern[13] = 7
-	pattern[14] = 7
-	pattern[15] = 7
+	
+	
 	
 	pass # Replace with function body.
 
@@ -53,4 +49,3 @@ func _on_drum_button_down() -> void:
 	if current == steps:
 		current = 0;
 	
-	pass # Replace with function body.
