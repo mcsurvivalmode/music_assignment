@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://doln151413gpp"]
+[gd_scene load_steps=7 format=3 uid="uid://doln151413gpp"]
 
-[ext_resource type="Script" path="res://splashscreen_script.gd" id="1_plr60"]
-[ext_resource type="Texture2D" uid="uid://chm3lerxsgmin" path="res://images/splashscreen_placeholder.jpg" id="2_dya84"]
+[ext_resource type="Script" path="res://scripts/splashscreen_script.gd" id="1_plr60"]
+[ext_resource type="Texture2D" uid="uid://cv2kh8vfpdjg8" path="res://images/UI/splashscreen_music_ass.png" id="2_47j1k"]
+[ext_resource type="Texture2D" uid="uid://diofmuetlxv1v" path="res://images/UI/exit_button.png" id="3_0mw7b"]
+[ext_resource type="Texture2D" uid="uid://boyyds47gqo3f" path="res://images/UI/play_button.png" id="4_vtrtd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ngln"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wq2da"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,15 +20,27 @@ script = ExtResource("1_plr60")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_dya84")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_47j1k")
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1798.0
+offset_top = 8.0
+offset_right = 1915.0
+offset_bottom = 133.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3ngln")
+icon = ExtResource("3_0mw7b")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 342.0
-offset_top = 232.0
-offset_right = 496.0
-offset_bottom = 270.0
+offset_left = 1506.0
+offset_top = 682.0
+offset_right = 1859.0
+offset_bottom = 1023.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wq2da")
+icon = ExtResource("4_vtrtd")
 
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

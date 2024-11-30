@@ -50,3 +50,8 @@ func _on_cat_4_pressed() -> void:
 
 
 	
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+	pass # Replace with function body.

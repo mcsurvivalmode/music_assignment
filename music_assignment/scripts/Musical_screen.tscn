@@ -1,23 +1,26 @@
-[gd_scene load_steps=27 format=3 uid="uid://bsabnbioyq1vi"]
+[gd_scene load_steps=31 format=3 uid="uid://bsabnbioyq1vi"]
 
 [ext_resource type="Script" path="res://scripts/musical_buttons.gd" id="1_8uvff"]
-[ext_resource type="Texture2D" uid="uid://bjvf54w77457x" path="res://images/stage_music.jpg" id="2_ujgd3"]
+[ext_resource type="Texture2D" uid="uid://bjvf54w77457x" path="res://images/UI/stage_music.jpg" id="2_ujgd3"]
 [ext_resource type="PackedScene" uid="uid://2nt7cbp5akwy" path="res://scripts/volume_sliders.tscn" id="3_cwv5s"]
-[ext_resource type="Texture2D" uid="uid://bf6newuqn0648" path="res://images/blue_button.png" id="3_hns56"]
-[ext_resource type="Texture2D" uid="uid://ci5fa4fvn5jhw" path="res://images/cats_on_stage.png" id="3_sbqic"]
+[ext_resource type="Texture2D" uid="uid://bf6newuqn0648" path="res://images/UI/blue_button.png" id="3_hns56"]
+[ext_resource type="Texture2D" uid="uid://ci5fa4fvn5jhw" path="res://images/UI/cats_on_stage.png" id="3_sbqic"]
 [ext_resource type="AudioStream" uid="uid://cd6ifrl05um1t" path="res://audio/blipSelect.wav" id="4_itv7l"]
 [ext_resource type="Texture2D" uid="uid://dmsa536y8rm0u" path="res://images/cats/idle_grey.png" id="4_kab1q"]
 [ext_resource type="AudioStream" uid="uid://q1supufivfvv" path="res://audio/laserShoot.wav" id="4_mp5lm"]
 [ext_resource type="Texture2D" uid="uid://bawi1667np4im" path="res://images/cats/idle_black.png" id="4_otpif"]
 [ext_resource type="Texture2D" uid="uid://1segxmi8w1nl" path="res://images/cats/idle_orange.png" id="5_mfk3a"]
 [ext_resource type="AudioStream" uid="uid://ci1ned7jvwfsu" path="res://audio/random.wav" id="5_q66on"]
-[ext_resource type="Texture2D" uid="uid://bqqn7kjo567v4" path="res://images/yellow_button.png" id="6_27t7a"]
+[ext_resource type="Texture2D" uid="uid://bqqn7kjo567v4" path="res://images/UI/yellow_button.png" id="6_27t7a"]
 [ext_resource type="Texture2D" uid="uid://cijosbbvmc651" path="res://images/cats/idle_white.png" id="7_1umda"]
-[ext_resource type="Texture2D" uid="uid://cew3qwu765jx4" path="res://images/green_button.png" id="8_mk6tg"]
-[ext_resource type="Texture2D" uid="uid://5ophggkvh1a1" path="res://images/red_button.png" id="10_nwdit"]
-[ext_resource type="Texture2D" uid="uid://d3yl3s0oxkqrh" path="res://images/drum_button.png" id="13_or1yy"]
+[ext_resource type="Texture2D" uid="uid://cew3qwu765jx4" path="res://images/UI/green_button.png" id="8_mk6tg"]
+[ext_resource type="Texture2D" uid="uid://5ophggkvh1a1" path="res://images/UI/red_button.png" id="10_nwdit"]
+[ext_resource type="Texture2D" uid="uid://d3yl3s0oxkqrh" path="res://images/UI/drum_button.png" id="13_or1yy"]
 [ext_resource type="Script" path="res://scripts/drum_looper.gd" id="14_xm7xh"]
 [ext_resource type="AudioStream" uid="uid://pq8kg860ussh" path="res://audio/clap-tape.wav" id="16_08rwd"]
+[ext_resource type="Texture2D" uid="uid://diofmuetlxv1v" path="res://images/UI/exit_button.png" id="19_026g5"]
+[ext_resource type="AudioStream" uid="uid://cerjidrxh8umm" path="res://audio/hihat-analog.wav" id="19_rb2xc"]
+[ext_resource type="AudioStream" uid="uid://txetqb060ocs" path="res://audio/snare-dist01.wav" id="20_dxcxc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i788"]
 
@@ -58,6 +61,8 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvql7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqbg4"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8uvff")
@@ -170,9 +175,9 @@ bus = &"volume_4"
 [node name="HSlider" parent="cat_4" instance=ExtResource("3_cwv5s")]
 layout_mode = 0
 offset_left = 23.0
-offset_top = -21.0
-offset_right = 396.0
-offset_bottom = -1.0
+offset_top = -75.0
+offset_right = 403.0
+offset_bottom = 53.0
 theme_override_styles/slider = SubResource("StyleBoxFlat_q68uh")
 bus_name = "volume_4"
 
@@ -196,32 +201,23 @@ icon = ExtResource("13_or1yy")
 [node name="drum_looper" type="Node2D" parent="."]
 script = ExtResource("14_xm7xh")
 
-[node name="Clap-tape" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
+[node name="Snare-dist01" type="AudioStreamPlayer" parent="drum_looper"]
+stream = ExtResource("20_dxcxc")
 
-[node name="Clap-tape2" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
-
-[node name="Clap-tape3" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
-
-[node name="Clap-tape4" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
-
-[node name="Clap-tape5" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
-
-[node name="Clap-tape6" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
-
-[node name="Clap-tape7" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
-
-[node name="Clap-tape8" type="AudioStreamPlayer" parent="drum_looper"]
-stream = ExtResource("16_08rwd")
+[node name="Hihat-analog" type="AudioStreamPlayer" parent="drum_looper"]
+stream = ExtResource("19_rb2xc")
 
 [node name="Timer" type="Timer" parent="drum_looper"]
-wait_time = 10.0
+wait_time = 0.25
+autostart = true
+
+[node name="exit" type="Button" parent="."]
+offset_left = 1803.0
+offset_top = 1.0
+offset_right = 1920.0
+offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oqbg4")
+icon = ExtResource("19_026g5")
 
 [connection signal="pressed" from="cat_1" to="." method="_on_cat_1_pressed"]
 [connection signal="pressed" from="cat_2" to="." method="_on_cat_2_pressed"]
@@ -230,3 +226,4 @@ wait_time = 10.0
 [connection signal="value_changed" from="Hslider" to="." method="_on_h_slider_value_changed"]
 [connection signal="button_down" from="drum" to="drum_looper" method="_on_drum_button_down"]
 [connection signal="timeout" from="drum_looper/Timer" to="drum_looper" method="_on_timer_timeout"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
