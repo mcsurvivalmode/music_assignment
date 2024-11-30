@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bsabnbioyq1vi"]
+[gd_scene load_steps=32 format=3 uid="uid://bsabnbioyq1vi"]
 
 [ext_resource type="Script" path="res://scripts/musical_buttons.gd" id="1_8uvff"]
 [ext_resource type="Texture2D" uid="uid://bjvf54w77457x" path="res://images/UI/stage_music.jpg" id="2_ujgd3"]
@@ -55,6 +55,15 @@ bg_color = Color(0.933333, 0.129412, 0.27451, 1)
 border_width_top = 10
 border_width_bottom = 10
 border_color = Color(0.933333, 0.129412, 0.27451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0alnu"]
+bg_color = Color(0.501961, 0.509804, 0.521569, 1)
+border_width_top = 10
+border_width_bottom = 10
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -181,12 +190,13 @@ offset_bottom = 53.0
 theme_override_styles/slider = SubResource("StyleBoxFlat_q68uh")
 bus_name = "volume_4"
 
-[node name="Hslider" type="HSlider" parent="."]
-offset_left = 110.0
-offset_top = 225.0
-offset_right = 549.0
-offset_bottom = 281.0
+[node name="drum_beat" type="HSlider" parent="."]
+offset_left = 97.0
+offset_top = 202.0
+offset_right = 536.0
+offset_bottom = 258.0
 rotation = 1.57227
+theme_override_styles/slider = SubResource("StyleBoxFlat_0alnu")
 max_value = 1.0
 step = 0.001
 
@@ -208,8 +218,7 @@ stream = ExtResource("20_dxcxc")
 stream = ExtResource("19_rb2xc")
 
 [node name="Timer" type="Timer" parent="drum_looper"]
-wait_time = 0.25
-autostart = true
+wait_time = 0.2
 
 [node name="exit" type="Button" parent="."]
 offset_left = 1803.0
@@ -223,7 +232,7 @@ icon = ExtResource("19_026g5")
 [connection signal="pressed" from="cat_2" to="." method="_on_cat_2_pressed"]
 [connection signal="pressed" from="cat_3" to="." method="_on_cat_3_pressed"]
 [connection signal="pressed" from="cat_4" to="." method="_on_cat_4_pressed"]
-[connection signal="value_changed" from="Hslider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="drum_beat" to="drum_looper" method="_on_drum_beat_value_changed"]
 [connection signal="button_down" from="drum" to="drum_looper" method="_on_drum_button_down"]
 [connection signal="timeout" from="drum_looper/Timer" to="drum_looper" method="_on_timer_timeout"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
