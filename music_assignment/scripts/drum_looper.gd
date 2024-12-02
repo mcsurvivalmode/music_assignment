@@ -54,7 +54,7 @@ func _on_timer_timeout() -> void:
 
 
 
-func _on_drum_beat_value_changed(value: float) -> void:
+func _on_drum_beat_value_changed(value: float) -> void: #changes the speed of the drum beat
 	$Timer.wait_time = remap(value, 0, 0.1, 0.15, 0.2)
 
 	

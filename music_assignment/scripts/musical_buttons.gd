@@ -12,11 +12,7 @@ func _process(delta: float) -> void:
 	
 	
 
-func _on_cat_1_pressed() -> void:
-	$"cat_1/Clap-tape".play()
-	$grey_cat.texture = load("res://images/cats/singing_grey.png")
-	await get_tree().create_timer(0.5).timeout
-	$grey_cat.texture = load("res://images/cats/idle_grey.png")
+
 
 
 func _on_cat_2_pressed() -> void:
@@ -45,4 +41,8 @@ func _on_cat_4_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_pitch_2_value_changed(value: float) -> void:
 	pass # Replace with function body.
