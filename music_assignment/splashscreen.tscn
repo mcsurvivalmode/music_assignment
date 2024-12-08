@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://doln151413gpp"]
 
 [ext_resource type="Script" path="res://scripts/splashscreen_script.gd" id="1_plr60"]
-[ext_resource type="Texture2D" uid="uid://cv2kh8vfpdjg8" path="res://images/UI/splashscreen_music_ass.png" id="2_47j1k"]
+[ext_resource type="Texture2D" uid="uid://b4opoi5xuyvlc" path="res://images/UI/splashscreen_purrforming.jpg" id="2_l0qk5"]
 [ext_resource type="Texture2D" uid="uid://diofmuetlxv1v" path="res://images/UI/exit_button.png" id="3_0mw7b"]
 [ext_resource type="Texture2D" uid="uid://boyyds47gqo3f" path="res://images/UI/play_button.png" id="4_vtrtd"]
 
@@ -22,7 +22,7 @@ script = ExtResource("1_plr60")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_47j1k")
+texture = ExtResource("2_l0qk5")
 
 [node name="exit" type="Button" parent="."]
 layout_mode = 0
